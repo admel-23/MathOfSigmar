@@ -10,7 +10,7 @@ Rotigus = Unit(
     weapon_profiles=[
         WeaponProfile(attacks=5, to_hit=3, to_wound=2, rend=1, damage=3),
         WeaponProfile(attacks=2, to_hit=3, to_wound=2, rend=2, damage=2),
-        WeaponProfile(attacks=10, to_hit=5, to_wound=5, rend=0, damage=1, trait=WeaponTrait.CRIT_AUTO_WOUND)
+        WeaponProfile(attacks=10, to_hit=5, to_wound=5, rend=0, damage=1, traits=[WeaponTrait.CRIT_AUTO_WOUND, WeaponTrait.COMPANION])
     ],
     points=500
 )
@@ -22,9 +22,9 @@ GreatUncleanOne = Unit(
     health=20,
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
-        WeaponProfile(range=7, attacks=D3_p3, to_hit=3, to_wound=2, rend=2, damage=2),
+        WeaponProfile(range=7, attacks=D3_p3, to_hit=3, to_wound=2, rend=2, damage=2, traits=[WeaponTrait.SHOOT_IN_COMBAT]),
         WeaponProfile(attacks=4, to_hit=3, to_wound=2, rend=2, damage=4),
-        WeaponProfile(attacks=10, to_hit=5, to_wound=5, rend=0, damage=1, trait=WeaponTrait.CRIT_AUTO_WOUND)
+        WeaponProfile(attacks=10, to_hit=5, to_wound=5, rend=0, damage=1, traits=[WeaponTrait.CRIT_AUTO_WOUND, WeaponTrait.COMPANION])
     ],
     points=480
 )
@@ -36,7 +36,7 @@ Poxbringer = Unit(
     health=5,
     defense_profile=DefenseProfile(save=5, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=3, to_hit=4, to_wound=3, rend=1, damage=2, trait=WeaponTrait.CRIT_MORTAL)
+        WeaponProfile(attacks=3, to_hit=4, to_wound=3, rend=1, damage=2, traits=[WeaponTrait.CRIT_MORTAL])
     ],
     points=130
 )
@@ -49,7 +49,7 @@ HorticulousSlimux = Unit(
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
         WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=1, damage=2),
-        WeaponProfile(attacks=4, to_hit=4, to_wound=3, rend=1, damage=D3)
+        WeaponProfile(attacks=4, to_hit=4, to_wound=3, rend=1, damage=D3, traits=[WeaponTrait.COMPANION])
     ],
     points=150
 )
@@ -61,7 +61,7 @@ SpoilpoxScrivener = Unit(
     health=5,
     defense_profile=DefenseProfile(save=5, ward=5),
     weapon_profiles=[
-        WeaponProfile(range=7, attacks=D6, to_hit=2, to_wound=4, rend=0, damage=1),
+        WeaponProfile(range=7, attacks=D6, to_hit=2, to_wound=4, rend=0, damage=1, traits=[WeaponTrait.COMPANION]),
         WeaponProfile(attacks=3, to_hit=4, to_wound=3, rend=1, damage=2)
     ],
     points=100
@@ -86,7 +86,7 @@ Nurglings = Unit(
     health=4,
     defense_profile=DefenseProfile(save=6, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=5, to_hit=5, to_wound=5, rend=0, damage=1, trait=WeaponTrait.CRIT_AUTO_WOUND)
+        WeaponProfile(attacks=5, to_hit=5, to_wound=5, rend=0, damage=1, traits=[WeaponTrait.CRIT_AUTO_WOUND])
     ],
     points=110
 )
@@ -98,7 +98,7 @@ BeastOfNurgle = Unit(
     health=8,
     defense_profile=DefenseProfile(save=5, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=5, to_hit=4, to_wound=3, rend=1, damage=D3)
+        WeaponProfile(attacks=5, to_hit=4, to_wound=3, rend=1, damage=D3, traits=[WeaponTrait.COMPANION])
     ],
     points=150
 )
@@ -110,8 +110,8 @@ PlagueDrones = Unit(
     health=5,
     defense_profile=DefenseProfile(save=5, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=2, to_hit=4, to_wound=3, rend=0, damage=1, trait=WeaponTrait.CRIT_MORTAL),
-        WeaponProfile(attacks=6, to_hit=4, to_wound=3, rend=0, damage=1)
+        WeaponProfile(attacks=2, to_hit=4, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.CRIT_MORTAL]),
+        WeaponProfile(attacks=6, to_hit=4, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.COMPANION])
     ],
     points=180
 )
@@ -123,7 +123,7 @@ Plaguebearers = Unit(
     health=2,
     defense_profile=DefenseProfile(save=6, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=1, to_hit=4, to_wound=3, rend=0, damage=1, trait=WeaponTrait.CRIT_MORTAL)
+        WeaponProfile(attacks=1, to_hit=4, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.CRIT_MORTAL])
     ],
     points=140
 )
@@ -149,9 +149,9 @@ MorbidexTwiceborn = Unit(
     health=14,
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
-        WeaponProfile(range=7, attacks=3, to_hit=3, to_wound=3, rend=1, damage=1),
+        WeaponProfile(range=7, attacks=3, to_hit=3, to_wound=3, rend=1, damage=1, traits=[WeaponTrait.COMPANION, WeaponTrait.SHOOT_IN_COMBAT]),
         WeaponProfile(attacks=5, to_hit=3, to_wound=3, rend=1, damage=2),
-        WeaponProfile(attacks=5, to_hit=4, to_wound=2, rend=2, damage=3)
+        WeaponProfile(attacks=5, to_hit=4, to_wound=2, rend=2, damage=3, traits=[WeaponTrait.COMPANION])
     ],
     points=320
 )
@@ -163,9 +163,9 @@ BloabRotspawned = Unit(
     health=14,
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
-        WeaponProfile(range=7, attacks=7, to_hit=2, to_wound=4, rend=1, damage=D3),
+        WeaponProfile(range=7, attacks=7, to_hit=2, to_wound=4, rend=1, damage=D3, traits=[WeaponTrait.COMPANION, WeaponTrait.SHOOT_IN_COMBAT]),
         WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=1, damage=2),
-        WeaponProfile(attacks=5, to_hit=4, to_wound=2, rend=2, damage=3)
+        WeaponProfile(attacks=5, to_hit=4, to_wound=2, rend=2, damage=3, traits=[WeaponTrait.COMPANION])
     ],
     points=320
 )
@@ -177,7 +177,7 @@ GutrotSpume = Unit(
     health=7,
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=5, to_hit=3, to_wound=2, rend=1, damage=2)
+        WeaponProfile(attacks=5, to_hit=3, to_wound=2, rend=1, damage=2, traits=[WeaponTrait.CRIT_MORTAL, WeaponTrait.ANTI_HERO])
     ],
     points=180
 )
@@ -189,8 +189,8 @@ LordOfAfflictions = Unit(
     health=8,
     defense_profile=DefenseProfile(save=3, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=2),
-        WeaponProfile(attacks=6, to_hit=4, to_wound=3, rend=0, damage=1)
+        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=2, traits=[WeaponTrait.CHARGE_D_p1]),
+        WeaponProfile(attacks=6, to_hit=4, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.COMPANION])
     ],
     points=220
 )
@@ -202,9 +202,9 @@ OrghottsDeamonspew = Unit(
     health=14,
     defense_profile=DefenseProfile(save=3, ward=5),
     weapon_profiles=[
-        WeaponProfile(range=7, attacks=1, to_hit=3, to_wound=3, rend=0, damage=D6),
+        WeaponProfile(range=7, attacks=1, to_hit=3, to_wound=3, rend=0, damage=D6, traits=[WeaponTrait.COMPANION, WeaponTrait.SHOOT_IN_COMBAT]),
         WeaponProfile(attacks=7, to_hit=3, to_wound=3, rend=1, damage=2),
-        WeaponProfile(attacks=5, to_hit=4, to_wound=2, rend=2, damage=3)
+        WeaponProfile(attacks=5, to_hit=4, to_wound=2, rend=2, damage=3, traits=[WeaponTrait.COMPANION])
     ],
     points=340
 )
@@ -216,7 +216,7 @@ LordOfBlights = Unit(
     health=7,
     defense_profile=DefenseProfile(save=3, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=3)
+        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=3, traits=[WeaponTrait.ANTI_CHARGE])
     ],
     points=170
 )
@@ -228,8 +228,8 @@ HarbingerOfDecay = Unit(
     health=7,
     defense_profile=DefenseProfile(save=3, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=1, damage=3),
-        WeaponProfile(attacks=2, to_hit=5, to_wound=3, rend=0, damage=1)
+        WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=1, damage=3, traits=[WeaponTrait.CRIT_MORTAL]),
+        WeaponProfile(attacks=2, to_hit=5, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.COMPANION])
     ],
     points=200
 )
@@ -253,7 +253,7 @@ LordOfPlagues = Unit(
     health=7,
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=5, to_hit=3, to_wound=3, rend=1, damage=2, trait=WeaponTrait.CRIT_MORTAL)
+        WeaponProfile(attacks=5, to_hit=3, to_wound=3, rend=1, damage=2, traits=[WeaponTrait.CRIT_MORTAL])
     ],
     points=170
 )
@@ -265,8 +265,8 @@ PussgoyleBlightlords = Unit(
     health=8,
     defense_profile=DefenseProfile(save=4, ward=5),
     weapon_profiles=[
-        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=1),
-        WeaponProfile(attacks=6, to_hit=4, to_wound=3, rend=0, damage=1)
+        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=1, traits=[WeaponTrait.CHARGE_D_p1]),
+        WeaponProfile(attacks=6, to_hit=4, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.COMPANION])
     ],
     points=250
 )
@@ -290,14 +290,26 @@ RotmireCreed = Unit(
     health=1,
     defense_profile=DefenseProfile(save=6, ward=5),
     weapon_profiles=[
-        WeaponProfile(range=12, attacks=2, to_hit=4, to_wound=3, rend=0, damage=1),
+        WeaponProfile(range=12, attacks=2, to_hit=4, to_wound=3, rend=0, damage=1, traits=[WeaponTrait.CRIT_AUTO_WOUND]),
         WeaponProfile(attacks=2, to_hit=4, to_wound=4, rend=0, damage=1)
     ],
     points=130
+)
+
+ChaosChosen = Unit(
+    name="Chaos Chosen",
+    models=5,
+    movement=5,
+    health=3,
+    defense_profile=DefenseProfile(save=3),
+    weapon_profiles=[
+        WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=1, damage=2, traits=[WeaponTrait.CRIT_MORTAL]),
+    ],
+    points=250
 )
 
 NurgleUnits = [Rotigus, GreatUncleanOne, Poxbringer, HorticulousSlimux, SpoilpoxScrivener,
                SloppityBilepiper, Nurglings, BeastOfNurgle, PlagueDrones, Plaguebearers,
                Glottkin, MorbidexTwiceborn, BloabRotspawned, GutrotSpume, LordOfAfflictions,
                OrghottsDeamonspew, LordOfBlights, HarbingerOfDecay, RotbringerSorcerer,
-               LordOfPlagues, PussgoyleBlightlords, PutridBlightkings, RotmireCreed]
+               LordOfPlagues, PussgoyleBlightlords, PutridBlightkings, RotmireCreed, ChaosChosen]
