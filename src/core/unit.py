@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 from enum import Enum
 from src.core.dice import Dice
+from abc import ABC, abstractmethod
 
 class NumberCharacteristic(BaseModel):
     characteristic: str
@@ -18,9 +19,10 @@ class WeaponTrait(Enum):
     ANTI_INFANTRY = 6,
     ANTI_MONSTER = 7,
     ANTI_HERO = 8,
-    ANTI_CHARGE = 11,
-    CHARGE_D_p1 = 9,
-    SHOOT_IN_COMBAT = 10,
+    ANTI_CHARGE = 9,
+    CHARGE_D_p1 = 10,
+    SHOOT_IN_COMBAT = 11
+
 
 class WeaponProfile(BaseModel):
     attacks: int | Dice
@@ -28,13 +30,14 @@ class WeaponProfile(BaseModel):
     to_wound: int
     rend: int
     damage: int | Dice
-    range: Optional[int] = None
-    traits: [WeaponTrait] = []
+    range: Optional[int] = 0
+    traits: list[WeaponTrait] = []
 
     def has_trait(self, t: WeaponTrait):
         if t in self.traits:
             return True
         return False
+
 
 class DefenseProfile(BaseModel):
     save: int
@@ -43,8 +46,20 @@ class DefenseProfile(BaseModel):
 class Unit(BaseModel):
     name: str
     models: int
-    movement: int
+    movement: int | Dice
     health: int
     defense_profile: DefenseProfile
     weapon_profiles: list[WeaponProfile]
     points: Optional[int] = None
+
+class PassiveAbility(BaseModel, ABC):
+    name: str
+
+    @abstractmethod
+    def apply_to_unit(self, unit: Unit) -> Unit:
+        pass
+
+class WarscrollAbility(PassiveAbility, ABC):
+    originating_unit_name: str
+
+# class Modifier

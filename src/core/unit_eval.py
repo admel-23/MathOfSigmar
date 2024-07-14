@@ -14,13 +14,13 @@ def resolve_weapon_damage(weapon_profile: WeaponProfile, defense_profile: Defens
             continue
         auto_wound = False
         wound_rolls = 1
-        if hit_roll_result.is_critical_success() and (weapon_profile.trait is not None):
-            if weapon_profile.trait == WeaponTrait.CRIT_MORTAL:
+        if hit_roll_result.is_critical_success() and (len(weapon_profile.traits) > 0):
+            if weapon_profile.has_trait(WeaponTrait.CRIT_MORTAL):
                 damage += get_value(weapon_profile.damage)
                 continue
-            if weapon_profile.trait == WeaponTrait.CRIT_AUTO_WOUND:
+            if weapon_profile.has_trait(WeaponTrait.CRIT_AUTO_WOUND):
                 auto_wound = True
-            if weapon_profile.trait == WeaponTrait.CRIT_2HIT:
+            if weapon_profile.has_trait(WeaponTrait.CRIT_2HIT):
                 wound_rolls = 2
         for wound_roll in range(wound_rolls):
             wound_roll_result = D6.roll_check(weapon_profile.to_wound)

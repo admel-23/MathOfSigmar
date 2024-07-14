@@ -44,8 +44,11 @@ class Dice(BaseModel):
 
 class MultiDice(Dice):
     count: int
-    fixed: int = 0
 
 D3 = Dice(size=3)
 D6 = Dice(size=6)
 D3_p3 = Dice(size=3, fixed=3)
+D6_p3 = Dice(size=6, fixed=3)
+D6_p6 = Dice(size=6, fixed=6)
+D6_p8 = Dice(size=6, fixed=8)
+TwoD6 = MultiDice(size=6, count=2)
