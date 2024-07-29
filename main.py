@@ -1,12 +1,13 @@
 from src.unit_profiles.idoneth_deepkin import SoulraidHunt
+from src.unit_profiles.nurgle import BleakHost
 from src.eval.spearhead_eval import SpearheadEvaluator
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     spearhead_evaluator = SpearheadEvaluator()
     spearheads = [
-        ["Soulraid Hunt", SoulraidHunt]
+        ["Soulraid Hunt (Idoneth Deepkin)", SoulraidHunt],
+        ["Bleak Host (Nurgle)", BleakHost]
     ]
     for spearhead in spearheads:
         spearhead_name = spearhead[0]

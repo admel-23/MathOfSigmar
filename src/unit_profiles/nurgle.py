@@ -1,4 +1,4 @@
-from src.core.unit import Unit, DefenseProfile, WeaponProfile, WeaponTrait
+from src.core.unit import Unit, DefenseProfile, WeaponProfile, WeaponTrait, SpearheadProperties
 from src.core.dice import D3_p3, D3, D6
 
 Rotigus = Unit(
@@ -313,3 +313,81 @@ NurgleUnits = [Rotigus, GreatUncleanOne, Poxbringer, HorticulousSlimux, Spoilpox
                Glottkin, MorbidexTwiceborn, BloabRotspawned, GutrotSpume, LordOfAfflictions,
                OrghottsDeamonspew, LordOfBlights, HarbingerOfDecay, RotbringerSorcerer,
                LordOfPlagues, PussgoyleBlightlords, PutridBlightkings, RotmireCreed, ChaosChosen]
+
+SpoilpoxScrivenerS = Unit(
+    name="Spoilpox Scrivener",
+    models=1,
+    movement=4,
+    health=5,
+    defense_profile=DefenseProfile(save=5, ward=5),
+    weapon_profiles=[
+        WeaponProfile(range=7, attacks=D6, to_hit=2, to_wound=4, damage=1),
+        WeaponProfile(attacks=3, to_hit=4, to_wound=3, rend=1, damage=2)
+    ],
+    spearhead_properties=SpearheadProperties()
+)
+
+PussgoyleBlightlordsS = Unit(
+    name="Pussgoyle Blightlords",
+    models=1,
+    movement=8,
+    health=8,
+    defense_profile=DefenseProfile(save=4, ward=5),
+    weapon_profiles=[
+        WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=2, damage=1),
+        WeaponProfile(attacks=6, to_hit=4, to_wound=3, damage=1, traits=[WeaponTrait.COMPANION])
+    ],
+    spearhead_properties=SpearheadProperties()
+)
+
+PussgoyleBlightlordsS3 = Unit(
+    name="Pussgoyle Blightlords",
+    models=1,
+    movement=8,
+    health=8,
+    defense_profile=DefenseProfile(save=4, ward=5),
+    weapon_profiles=[
+        WeaponProfile(attacks=3, to_hit=3, to_wound=3, rend=2, damage=1),
+        WeaponProfile(attacks=6, to_hit=4, to_wound=3, damage=1, traits=[WeaponTrait.COMPANION])
+    ],
+    spearhead_properties=SpearheadProperties(arrives_3rd_round=True)
+)
+
+PutridBlightkingsS = Unit(
+    name="Putrid Blightkings",
+    models=5,
+    movement=4,
+    health=3,
+    defense_profile=DefenseProfile(save=3, ward=5),
+    weapon_profiles=[
+        WeaponProfile(attacks=4, to_hit=3, to_wound=3, rend=1, damage=1)
+    ],
+    spearhead_properties=SpearheadProperties()
+)
+
+PlaguebearersS = Unit(
+    name="Plaguebearers",
+    models=5,
+    movement=4,
+    health=2,
+    defense_profile=DefenseProfile(save=6, ward=5),
+    weapon_profiles=[
+        WeaponProfile(attacks=1, to_hit=4, to_wound=3, damage=1, traits=[WeaponTrait.CRIT_MORTAL])
+    ],
+    spearhead_properties=SpearheadProperties()
+)
+
+PlaguebearersS3 = Unit(
+    name="Plaguebearers",
+    models=5,
+    movement=4,
+    health=2,
+    defense_profile=DefenseProfile(save=6, ward=5),
+    weapon_profiles=[
+        WeaponProfile(attacks=1, to_hit=4, to_wound=3, damage=1, traits=[WeaponTrait.CRIT_MORTAL])
+    ],
+    spearhead_properties=SpearheadProperties(arrives_3rd_round=True)
+)
+
+BleakHost = [SpoilpoxScrivenerS, PussgoyleBlightlordsS, PussgoyleBlightlordsS3, PutridBlightkingsS,
+             PlaguebearersS, PlaguebearersS3]

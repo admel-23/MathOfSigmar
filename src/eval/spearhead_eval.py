@@ -7,6 +7,8 @@ class SpearheadEvaluator:
         defense_value = 0
         for unit in spearhead:
             defense_value += defense_evaluator.eval_unit(unit)
+            if unit.spearhead_properties.reinforcements:
+                defense_value += defense_evaluator.eval_unit(unit)
         print("Defense value: ", defense_value)
 
         melee_evaluator = MeleeEvaluator()
