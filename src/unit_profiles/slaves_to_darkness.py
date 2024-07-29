@@ -7,7 +7,7 @@ ChaosLordS = Unit(
     health=6,
     defense_profile=DefenseProfile(save=3),
     weapon_profiles=[
-        WeaponProfile(attacks=5, to_hit=3, to_wound=3, damage=2, traits=[WeaponTrait.CRIT_MORTAL])
+        WeaponProfile(attacks=5, to_hit=3, to_wound=3, rend=1, damage=2, traits=[WeaponTrait.CRIT_MORTAL])
     ],
     spearhead_properties=SpearheadProperties()
 )
