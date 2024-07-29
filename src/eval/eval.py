@@ -21,10 +21,12 @@ class AttackEvaluator(UnitEvaluator):
         total_value: float = 0
         for weapon_profile in unit.weapon_profiles:
             if self.weapon_matches(weapon_profile):
+                v6 = AttackEvaluator._simulate_weapon_damage(unit.models, weapon_profile, DefenseProfile(save=5)) * 5
                 v5 = AttackEvaluator._simulate_weapon_damage(unit.models, weapon_profile, DefenseProfile(save=5)) * 7
                 v4 = AttackEvaluator._simulate_weapon_damage(unit.models, weapon_profile, DefenseProfile(save=4)) * 10
-                v3 = AttackEvaluator._simulate_weapon_damage(unit.models, weapon_profile, DefenseProfile(save=3)) * 14
-                v_total = (v3 + v4 + v5) / 3
+                v3 = AttackEvaluator._simulate_weapon_damage(unit.models, weapon_profile, DefenseProfile(save=3)) * 15
+                v2 = AttackEvaluator._simulate_weapon_damage(unit.models, weapon_profile, DefenseProfile(save=3)) * 24
+                v_total = (v2 + v3 + v4 + v5 + v6) / 5
                 total_value += v_total
         return total_value
 
