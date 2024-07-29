@@ -46,8 +46,8 @@ SoulscryerS = Unit(
     health=5,
     defense_profile=DefenseProfile(save=5),
     weapon_profiles=[
-        WeaponProfile(range=10, attacks=8, to_hit=5, to_wound=5, rend=0, damange=1, traits=[WeaponTrait.COMPANION]),
-        WeaponProfile(attacks=3, to_hit=3, to_wound=4, rend=0, damage=D3)
+        WeaponProfile(range=10, attacks=8, to_hit=5, to_wound=5, damage=1, traits=[WeaponTrait.COMPANION]),
+        WeaponProfile(attacks=3, to_hit=3, to_wound=4, damage=D3)
     ],
     spearhead_properties=SpearheadProperties()
 )
@@ -59,8 +59,8 @@ MorrsarrGuardS = Unit(
     health=4,
     defense_profile=DefenseProfile(save=4),
     weapon_profiles=[
-        WeaponProfile(attacks=2, to_hit=3, to_wound=4, rend=1, damange=1),
-        WeaponProfile(attacks=3, to_hit=4, to_wound=3, rend=10, damage=D3, traits=[WeaponTrait.COMPANION])
+        WeaponProfile(attacks=2, to_hit=3, to_wound=4, rend=1, damage=1),
+        WeaponProfile(attacks=3, to_hit=4, to_wound=3, rend=1, damage=D3, traits=[WeaponTrait.COMPANION])
     ],
     spearhead_properties=SpearheadProperties()
 )
@@ -72,8 +72,8 @@ AkhelianAllopexS = Unit(
     health=8,
     defense_profile=DefenseProfile(save=4),
     weapon_profiles=[
-        WeaponProfile(range=18, attacks=2, to_hit=3, to_wound=2, rend=1, damange=3),
-        WeaponProfile(attacks=4, to_hit=3, to_wound=4, rend=1, damange=1),
+        WeaponProfile(range=18, attacks=2, to_hit=3, to_wound=2, rend=1, damage=3),
+        WeaponProfile(attacks=4, to_hit=3, to_wound=4, rend=1, damage=1),
         WeaponProfile(attacks=3, to_hit=4, to_wound=2, rend=2, damage=2, traits=[WeaponTrait.COMPANION])
     ],
     spearhead_properties=SpearheadProperties()
@@ -86,7 +86,7 @@ NamarthiThrallsS = Unit(
     health=1,
     defense_profile=DefenseProfile(save=5),
     weapon_profiles=[
-        WeaponProfile(attacks=2, to_hit=3, to_wound=4, rend=1, damange=1),
+        WeaponProfile(attacks=2, to_hit=3, to_wound=4, rend=1, damage=1),
     ],
     spearhead_properties=SpearheadProperties(reinforcements=True)
 )

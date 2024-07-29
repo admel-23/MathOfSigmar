@@ -28,7 +28,7 @@ class WeaponProfile(BaseModel):
     attacks: int | Dice
     to_hit: int
     to_wound: int
-    rend: int
+    rend: int = 0
     damage: int | Dice
     range: Optional[int] = 0
     traits: list[WeaponTrait] = []
@@ -44,8 +44,8 @@ class DefenseProfile(BaseModel):
     ward: Optional[int] = None
 
 class SpearheadProperties(BaseModel):
-    reinforcements = False,
-    arrives_3rd_round = False
+    reinforcements: bool = False
+    arrives_3rd_round: bool = False
 
 class Unit(BaseModel):
     name: str
