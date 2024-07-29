@@ -1,3 +1,4 @@
+from src.unit_profiles.gloomspite_gitz import BadMoonMadmob
 from src.unit_profiles.idoneth_deepkin import SoulraidHunt
 from src.unit_profiles.nurgle import BleakHost
 from src.unit_profiles.slaves_to_darkness import BloodwindLegion
@@ -7,6 +8,7 @@ from src.eval.spearhead_eval import SpearheadEvaluator
 if __name__ == '__main__':
     spearhead_evaluator = SpearheadEvaluator()
     spearheads = [
+        ["Bad Moon Madmonb (Gloomspite Gitz)", BadMoonMadmob],
         ["Soulraid Hunt (Idoneth Deepkin)", SoulraidHunt],
         ["Bleak Host (Nurgle)", BleakHost],
         ["Bloodwind Legion (Slaves to Darkness)", BloodwindLegion]

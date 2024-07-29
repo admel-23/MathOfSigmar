@@ -1,5 +1,4 @@
 from src.core.unit import Unit, DefenseProfile, WeaponProfile, WeaponTrait, SpearheadProperties
-from src.core.dice import D3_p3, D3, D6
 
 ChaosLordS = Unit(
     name="Chaos Lord",
