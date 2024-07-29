@@ -43,6 +43,10 @@ class DefenseProfile(BaseModel):
     save: int
     ward: Optional[int] = None
 
+class SpearheadProperties(BaseModel):
+    reinforcements = False,
+    arrives_3rd_round = False
+
 class Unit(BaseModel):
     name: str
     models: int
@@ -51,6 +55,7 @@ class Unit(BaseModel):
     defense_profile: DefenseProfile
     weapon_profiles: list[WeaponProfile]
     points: Optional[int] = None
+    spearhead_properties: Optional[SpearheadProperties] = None
 
 class PassiveAbility(BaseModel, ABC):
     name: str
